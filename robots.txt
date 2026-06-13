@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://paulmatata.github.io/makueni-county-ict-centres-government-ict-centres/sitemap.xml
