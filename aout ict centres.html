@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Makueni ICT Centres</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #006400;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      margin: 15px;
+      width: 280px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card h3 {
+      background: #006400;
+      color: white;
+      margin: 0;
+      padding: 15px;
+      border-radius: 8px 8px 0 0;
+    }
+    .card-content {
+      padding: 15px;
+      display: none;
+    }
+    .card.active .card-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Us - ICT Centres in Makueni County</h1>
+    <p>Explore our digital empowerment hubs across the county</p>
+  </header>
+
+  <div class="container">
+    <!-- Ajiry Centre -->
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Ajiry Centre - Wote</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Ajiry</p>
+        <p><strong>Location:</strong> Wote Green Park</p>
+        <p><strong>Details:</strong> Offers digital skills training, mentorship, cyber security certification, and creative spaces for music, podcasts, and deejaying. Partnership with Tribus-TSG and Mastercard Foundation.</p>
+      </div>
+    </div>
+
+    <!-- Makueni Technology & Innovation Hub -->
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Makueni Technology & Innovation Hub</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Community Hub</p>
+        <p><strong>Location:</strong> Wote Green Park</p>
+        <p><strong>Details:</strong> Established with World Bank support. Provides free Wi-Fi, computer classes, and innovation challenges to bridge the digital divide.</p>
+      </div>
+    </div>
+
+    <!-- Ajira Centres -->
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Ajira Centre - Kibwezi West</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Ajira</p>
+        <p><strong>Location:</strong> Chief’s Office</p>
+        <p><strong>Details:</strong> Provides access to online work opportunities and digital training for youth in Kibwezi West.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Community ICT Hub - Kilungu</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Community Hub</p>
+        <p><strong>Location:</strong> Local Hall</p>
+        <p><strong>Details:</strong> Offers free Wi-Fi and basic computer training for residents of Kilungu.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Ajira Centre - Mbooni</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Ajira</p>
+        <p><strong>Location:</strong> Chief’s Office</p>
+        <p><strong>Details:</strong> Supports youth with digital literacy and online freelancing opportunities.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Ajira Centre - Kaiti</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Ajira</p>
+        <p><strong>Location:</strong> Chief’s Office</p>
+        <p><strong>Details:</strong> Provides ICT access and training for Kaiti sub-county residents.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Community ICT Hub - Mukaa</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Community Hub</p>
+        <p><strong>Location:</strong> Community Hall</p>
+        <p><strong>Details:</strong> Offers digital literacy programs and free internet access for Mukaa residents.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Ajira Centre - Kibwezi East</h3>
+      <div class="card-content">
+        <p><strong>Type:</strong> Ajira</p>
+        <p><strong>Location:</strong> Chief’s Office</p>
+        <p><strong>Details:</strong> Provides ICT training and online work opportunities for Kibwezi East youth.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleCard(card) {
+      card.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
