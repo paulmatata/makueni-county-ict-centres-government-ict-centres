@@ -144,5 +144,58 @@
       card.classList.toggle("active");
     }
   </script>
+
+  <!-- Footer Section -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <img src="cloudp-tech-logo.png" alt="CloudP Tech Logo" class="footer-logo">
+      <span>Designed and Managed by CloudP Tech</span>
+    </div>
+    <div class="footer-right">
+      <p>&copy; <span id="year"></span> All Rights Reserved</p>
+      <p>Contact: <a href="tel:0726133235">0726133235</a> (Call/WhatsApp)</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #006400;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer-left {
+    display: flex;
+    align-items: center;
+  }
+  .footer-logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  .footer-right p {
+    margin: 5px 0;
+  }
+  a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  // Auto-update year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
