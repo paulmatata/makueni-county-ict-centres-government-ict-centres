@@ -14,7 +14,7 @@
 </head>
 <body>
   <!-- Sticky Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">Makueni ICT Centres</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -37,7 +37,7 @@
   <!-- Hero Section -->
   <header class="bg-light text-center py-5">
     <div class="container">
-      <h1 class="fw-bold">Explore ICT Centres in Makueni County</h1>
+      <h1 class="fw-bold display-5">Explore ICT Centres in Makueni County</h1>
       <p class="lead">Ajira, Ajiry, and Community Hubs empowering digital skills and opportunities</p>
     </div>
   </header>
@@ -47,8 +47,8 @@
     <div class="row g-4" id="cardsContainer">
       <!-- Ajiry Centre -->
       <div class="col-md-4 col-sm-6 card-item">
-        <div class="card shadow-sm h-100">
-          <div class="card-header bg-success text-white">Ajiry Centre - Wote</div>
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-header bg-success text-white fw-bold">Ajiry Centre - Wote</div>
           <div class="card-body">
             <p><strong>Type:</strong> Ajiry</p>
             <p><strong>Location:</strong> Wote Green Park</p>
@@ -64,8 +64,8 @@
 
       <!-- Innovation Hub -->
       <div class="col-md-4 col-sm-6 card-item">
-        <div class="card shadow-sm h-100">
-          <div class="card-header bg-success text-white">Makueni Technology & Innovation Hub</div>
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-header bg-success text-white fw-bold">Makueni Technology & Innovation Hub</div>
           <div class="card-body">
             <p><strong>Type:</strong> Community Hub</p>
             <p><strong>Location:</strong> Wote Green Park</p>
@@ -81,8 +81,8 @@
 
       <!-- Ajira Centre Kibwezi -->
       <div class="col-md-4 col-sm-6 card-item">
-        <div class="card shadow-sm h-100">
-          <div class="card-header bg-success text-white">Ajira Centre - Kibwezi West</div>
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-header bg-success text-white fw-bold">Ajira Centre - Kibwezi West</div>
           <div class="card-body">
             <p><strong>Type:</strong> Ajira</p>
             <p><strong>Location:</strong> Chief’s Office</p>
@@ -118,11 +118,21 @@
   </footer>
 
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
     .highlight {
       background-color: yellow;
       font-weight: bold;
     }
+    .card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s ease;
+    }
   </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <script>
     // Auto-update year
@@ -166,46 +176,5 @@
       });
     }
   </script>
-</body>
-
-
-<style>
-  footer {
-    background: #006400;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
-  }
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .footer-left {
-    display: flex;
-    align-items: center;
-  }
-  .footer-logo {
-    height: 40px;
-    margin-right: 10px;
-  }
-  .footer-right p {
-    margin: 5px 0;
-  }
-  a {
-    color: #FFD700;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-</style>
-
-<script>
-  // Auto-update year
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
 </body>
 </html>
