@@ -73,9 +73,8 @@
           <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
         <!-- Search Bar -->
-        <form class="d-flex ms-lg-3 mt-2 mt-lg-0" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search ICT Centres..." aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
+        <form class="d-flex ms-lg-3 mt-2 mt-lg-0" role="search" onsubmit="return false;">
+          <input id="searchInput" class="form-control me-2" type="search" placeholder="Search ICT Centres..." aria-label="Search">
         </form>
       </div>
     </div>
@@ -91,9 +90,9 @@
 
   <!-- Cards Section -->
   <div class="container my-5">
-    <div class="row g-4">
+    <div class="row g-4" id="cardsContainer">
       <!-- Ajiry Centre -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-6 card-item">
         <div class="card shadow-sm h-100">
           <div class="card-header bg-success text-white">Ajiry Centre - Wote</div>
           <div class="card-body">
@@ -110,7 +109,7 @@
       </div>
 
       <!-- Innovation Hub -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-6 card-item">
         <div class="card shadow-sm h-100">
           <div class="card-header bg-success text-white">Makueni Technology & Innovation Hub</div>
           <div class="card-body">
@@ -127,7 +126,7 @@
       </div>
 
       <!-- Ajira Centre Kibwezi -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-6 card-item">
         <div class="card shadow-sm h-100">
           <div class="card-header bg-success text-white">Ajira Centre - Kibwezi West</div>
           <div class="card-body">
@@ -142,6 +141,11 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div id="noResults" class="text-center mt-4" style="display:none;">
+      <p class="text-danger fw-bold">No results found. Try another keyword.</p>
     </div>
   </div>
 
@@ -159,9 +163,54 @@
     </div>
   </footer>
 
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+
   <script>
     // Auto-update year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Search filter + highlight + no results
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card-item");
+    const noResults = document.getElementById("noResults");
+
+    searchInput.addEventListener("keyup", function() {
+      const query = searchInput.value.toLowerCase();
+      let matches = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = "";
+          highlightText(card, query);
+          matches++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      noResults.style.display = matches === 0 && query ? "block" : "none";
+    });
+
+    function highlightText(card, query) {
+      // Remove old highlights
+      card.querySelectorAll("mark").forEach(mark => {
+        mark.replaceWith(mark.textContent);
+      });
+
+      if (!query) return;
+
+      const elements = card.querySelectorAll(".card-header, .card-body p");
+      elements.forEach(el => {
+        const regex = new RegExp(`(${query})`, "gi");
+        el.innerHTML = el.textContent.replace(regex, "<mark class='highlight'>$1</mark>");
+      });
+    }
   </script>
 </body>
 
